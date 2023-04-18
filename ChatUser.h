@@ -1,18 +1,17 @@
-#pragma once
 #include <string>
-#include <iostream>
+#pragma once
 
-class ChatUser{
-public:
-  ChatUser();
-  ChatUser(std::string user_name, std::string user_login, std::string user_password);
-  ~ChatUser();
-  void ChatEnter(std::string user_login, std::string user_password);
-  void LogOut();
+class ChatUser {
 private:
-  std::string user_name;
-  std::string user_login;
-  std::string user_password;
+    std::string username;
+    std::string password;
+    std::string login;
 
-  bool online = false;
+public:
+    ChatUser();
+    ChatUser(std::string username, std::string password, std::string login) : username(username), password(password), login(login) {}
+    ~ChatUser(){};
+    std::string getUsername();
+    std::string getPassword();
+    std::string getLogin();
 };
